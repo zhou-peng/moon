@@ -1,0 +1,15 @@
+---
+layout: default
+title: 我
+---
+<div class="body">
+  {% for post in site.posts %}
+  <div class="item">
+    <a class="item-title" href="{{ site.baseurl}}{{post.url}}"><i class="icon-leaf"></i> {{ post.title }}</a>
+    <div class="item-time">{{ post.date | YYYY-MM-DD HH:MM:SS }}</div>
+    <div class="item-content">
+      {{ post.excerpt }}...
+    </div>
+  </div>    
+  {% endfor %}
+</div>

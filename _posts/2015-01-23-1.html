@@ -1,0 +1,67 @@
+---
+layout: js
+title: js中的一些常用判断
+menu: js
+excerpt: typeof运算符会返回一个表示类型的字符串,用typeof来检测这些的原始值类型是非常安全的
+---
+<div class="body">
+	<div class="detail-title">{{ page.title }}</div>
+	<div class="detail-time">{{ page.date | YYYY-MM-DD HH:MM:SS }}</div>
+	<div class="detail-content">
+		<pre>
+<span class="color2">typeof</span>运算符会返回一个表示类型的字符串。
+对于字符串：返回<span class="color3">“string”</span>；
+对于数字：返回<span class="color3">“number”</span>；
+对于布尔值：返回<span class="color3">“boolean”</span>；
+对于undefined：返回<span class="color3">“undefined”</span>。
+用<span class="color2">typeof</span>来检测这些的原始值类型是非常安全的。
+最后一个原始值为<span class="color2">Null</span>，<span class="color2">typeof</span> <span class="color2">null</span>等于<span class="color3">“object”</span>，这是一个低效判断null的方法，若果要测试null，你可以直接用（===）或者（!==）。
+		</pre>
+		<pre>
+在javascript中，除了原始值就是引用值(Object,Array,Date,Error),<span class="color2">typeof</span>引用类型都会返回<span class="color3">“object”</span>，最好的方法是使用<span class="color2">instanceof</span>运算符。
+<span class="color2">instanceof</span>的一个有意思的特性是它不仅检测构造这个对象的构造器，还检测原型链。
+默认情况下，每个对象都继承自Object，因此每个对象的 <span class="color2">value instanceof Object</span> 都会返回true。
+		</pre>
+		<pre>
+在ie8和更早版本的IE浏览器中，使用<span class="color2">typeof</span>检测DOM节点中的函数都返回<span class="color3">“object”</span>，而不是<span class="color3">“function”</span>。出现这种怪异现象的原因是浏览器对DOM的实现有差异。
+早期的ie浏览器并没有将DOM实现为内置的javascript方法，导致内置<span class="color2">typeof</span>运算符将这些函数识别为对象。开发者往往通过<span class="color2">in</span>运算符来检测DOM方法。
+<span class="color5">if</span>(<span class="color3">"querySelectorAll"</span> <span class="color5">in</span> document){
+  <span class="color4">// do something</span>
+}
+早期的ie的DOM对象并非继承自Object，<span class="color2">value instanceof Object</span> 在此情况下会返回false；
+		</pre>
+		<pre>
+怎么检测是否为数组？
+鸭式辩型：检测其是否含有sort()方法。
+<span class="color5">function</span> isArray(value){
+  <span class="color5">return</span> <span class="color5">typeof</span> value.sort === <span class="color3">"function"</span>;
+}
+如果value里含有sort方法也会返回true。
+
+另外一种比较流行方法：调用某个值的内置toString()方法在所有浏览器中会返回标准字符串结果。
+<span class="color5">function</span> isArray(value){
+  <span class="color5">return</span> Object.prototype.toString.call(value) === <span class="color3">"[object Array]"</span>;
+}
+
+ECMAScript5将Array.isArray()正式引入javascript，唯一的目的就是准确的检测一个值是否为数组。
+		</pre>
+		<pre>
+判断属性是否存在的最好方法是使用in运算符。in运算符会简单的判断属性是否存在，不会去读它的值，包括原型链上的属性。
+有继承自Object的javascript对象都有hasOwnProperty(),它不会判断原型链上的属性。DOM对象会有所不一样。
+		</pre>
+	</div>
+	<div class="item-status" style="text-align:right;margin-top: 20px;">
+      <a href="#">
+        <i class="icon-eye-open"></i> 阅读(0)
+      </a>
+      <a href="#">
+        <i class="icon-pencil"></i> 评论(0) 
+      </a>
+      <a href="#">
+        <i class="icon-thumbs-up"></i> 转载(0) 
+      </a>
+      <a href="#">
+        <i class="icon-heart"></i> 收藏()
+      </a>
+    </div>
+</div>

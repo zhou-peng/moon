@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/moon/css/common.css">
+	<link rel="stylesheet" href="/moon/css/bootstrap.min.css">
+
+	<script src="/moon/js/jquery-2.1.3.min.js"></script>
+	<script src="/moon/js/bootstrap.min.js"></script>
+	<script src="/moon/js/common.js"></script>
+	<title>moon</title>
+</head>
+<body style="background-color: #228b22;">
+<div class="box">
+	<div class="header clear-fix">
+	<a class="logo" href="/moon/">moon's blog</a>
+	<ul class="menu">
+		<li ><a href="/moon/">首页</a></li>
+		<li class="active"><a href="/moon/style">CSS</a></li>
+		<li ><a href="/moon/javascript">javascript</a></li>
+		<li ><a href="/moon/master">主人</a></li>
+	</ul>
+</div>
+	<div class="line"></div>
+	<div class="body">
+	<div class="detail-title">hack css兼容--!important</div>
+	<div class="detail-time">2015-01-25 00:00:00 +0800</div>
+	<div class="detail-content">
+		<pre>
+并不说IE真的不认识!important,如果你单单想用!important去区别IE和其他浏览器那你就错了，比如：
+  <span class="color2">.myclass</span>{
+    <span class="color3">backgroud-color</span>: <span class="color5">black</span> <span class="color2">!important</span>;
+  }
+我们异想天开的认为，这条样式IE不认，我们可以让它在其他浏览器上定制显示。到底是不是这样呢？ 真的不是！ IE也认了。
+
+说到这你是不是有点糊涂了，到底IE认不认啊？？？
+
+答案很简单，只有当同时出现两个同名的样式时，才可以这样用，就像下面这样的.
+
+  <span class="color2">.myclass</span>{
+     <span class="color3">margin-left</span>: <span class="color5">20px</span> <span class="color2">!important</span>;
+     <span class="color3">margin-left</span>: <span class="color5">40px</span>;
+  }
+
+在这里写一个有用的例子。
+ie下面对元素的高度定义和其他浏览器不一样，eg：
+  <span class="color2">.test1</span>{
+    <span class="color3">width</span>: <span class="color5">100px</span>;
+    <span class="color3">padding</span>: <span class="color5">5px</span>;
+    <span class="color3">border</span>: <span class="color5">1px solid #ddd</span>;
+    <span class="color3">height</span>: <span class="color5">30px !important</span>;
+    <span class="color3">height</span>: <span class="color5">42px</span>;
+  }
+
+这样的话，各个浏览器页面显示的这个<span class="color2">.test1</span>的元素就是一样的了。
+		</pre>
+	</div>
+	<div class="item-status" style="text-align:right;margin-top: 20px;">
+      <a href="#">
+        <i class="icon-eye-open"></i> 阅读(0)
+      </a>
+      <a href="#">
+        <i class="icon-pencil"></i> 评论(0) 
+      </a>
+      <a href="#">
+        <i class="icon-thumbs-up"></i> 转载(0) 
+      </a>
+      <a href="#">
+        <i class="icon-heart"></i> 收藏()
+      </a>
+    </div>
+</div>
+	<div class="footer">
+	Copyright © 2015 - ? zhou-peng, All Rights Reserved
+</div>
+</div>
+</body>
+</html>

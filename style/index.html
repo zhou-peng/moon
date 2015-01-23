@@ -1,0 +1,17 @@
+---
+layout: style
+title: style
+---
+<div class="body">
+  {% for post in site.posts %}
+    {% if post.menu == 'style' %}
+    <div class="item">
+      <a class="item-title" href="{{ site.baseurl}}{{post.url}}"><i class="icon-leaf"></i> {{ post.title }}</a>
+      <div class="item-time">{{ post.date | YYYY-MM-DD HH:MM:SS }}</div>
+      <div class="item-content">
+        {{ post.excerpt }}...
+      </div>
+    </div>  
+    {% endif %}  
+  {% endfor %}
+</div>
