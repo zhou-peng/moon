@@ -39,6 +39,11 @@ body {
 
 }
 
+.log-img {
+	float: left;
+	width: 40px;
+}
+
 .logo {
 	float: left;
 	font-size: 40px;
