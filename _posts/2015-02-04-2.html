@@ -1,0 +1,55 @@
+---
+layout: js
+title: JavaScript中的小知识
+menu: js
+excerpt: Javascript中时常会出现部分误区，自己看出查资料时整理了些
+---
+<div class="body">
+	<div class="detail-title">{{ page.title }}</div>
+	<div class="detail-time">{{ page.date | YYYY-MM-DD HH:MM:SS }}</div>
+	<div class="detail-content">	
+		<pre>
+摘抄于<a href="http://javascript.ruanyifeng.com/grammar/basic.html" target="_blank" class="color3">http://javascript.ruanyifeng.com/grammar/basic.html</a>
+		</pre>
+  <pre>
+    <h4>1.switch语句后面的表达式与case语句后面的表示式</h4>
+switch语句后面的表达式与case语句后面的表示式，在比较运行结果时，采用的是严格相等运算符（===），而不是相等运算符（==），这意味着比较时不会发生类型转换。
+<span class="color5">function</span> test(s){
+  <span class="color5">switch</span>(s){
+    <span class="color5">case</span> 1: <span class="color5">console</span>.log(1);<span class="color5">break</span>;
+    <span class="color5">case</span> 2: <span class="color5">console</span>.log(2);<span class="color5">break</span>;
+    <span class="color5">default</span>: <span class="color5">console</span>.log(3);
+  }
+}
+
+test(1); <span class="color4">//1</span>
+test(<span class="color3">"1"</span>); <span class="color4">// 3</span>
+
+switch结构不利于代码重用，往往可以用对象形式重写
+<span class="color5">var</span> o = {
+    <span class="color2">banana</span>: <span class="color5">function</span> (){ <span class="color5">return</span> },
+    <span class="color2">apple</span>: <span class="color5">function</span> (){ <span class="color5">return</span> },
+    <span class="color2">default</span>: <span class="color5">function</span> (){ <span class="color5">return</span> }
+};
+
+<span class="color5">if</span> (o[<span class="color3">'fruit'</span>]){
+    o[<span class="color3">'fruit'</span>]();
+} <span class="color5">else</span> {
+    o[<span class="color3">'default'</span>]();
+}
+  </pre>
+	<div class="item-status" style="text-align:right;margin-top: 20px;">
+      <a href="#">
+        <i class="icon-eye-open"></i> 阅读(0)
+      </a>
+      <a href="#">
+        <i class="icon-pencil"></i> 评论(0) 
+      </a>
+      <a href="#">
+        <i class="icon-thumbs-up"></i> 转载(0) 
+      </a>
+      <a href="#">
+        <i class="icon-heart"></i> 收藏()
+      </a>
+    </div>
+</div>

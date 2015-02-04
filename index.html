@@ -3,7 +3,7 @@ layout: default
 title: 我
 ---
 <div class="body">
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
   <div class="item">
     <a class="item-title" href="{{ site.baseurl}}{{post.url}}"><i class="icon-leaf"></i> {{ post.title }}</a>
     <div class="item-time">{{ post.date | YYYY-MM-DD HH:MM:SS }}</div>
@@ -13,9 +13,8 @@ title: 我
   </div>    
   {% endfor %}
 
-  {{paginator.total_pages}},{{paginator.page}}
 
-  {% if paginator.total_pages > 1 %}
+  <!-- {% if paginator.total_pages > 1 %}
 	<div class="pagination">
 	  {% if paginator.previous_page %}
 	    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
@@ -45,7 +44,7 @@ title: 我
 		      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
 		    {% endif %}
 		{% endif %}
-	  {% endfor %}
+	  {% endfor %} -->
 
 	  <!-- {% for page in (1..paginator.total_pages) %}
 	    {% if page == paginator.page %}
@@ -57,11 +56,11 @@ title: 我
 	    {% endif %}
 	  {% endfor %} -->
 
-	  {% if paginator.next_page %}
+	  <!-- {% if paginator.next_page %}
 	    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
 	  {% else %}
 	    <span>Next &raquo;</span>
 	  {% endif %}
 	</div>
-	{% endif %}
+	{% endif %} -->
 </div>

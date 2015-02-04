@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<Link href="/moon/img/leaf.ico" rel="Shortcut Icon">
+	<link rel="stylesheet" href="/moon/css/common.css">
+	<link rel="stylesheet" href="/moon/css/bootstrap.min.css">
+
+	<script src="/moon/js/jquery-2.1.3.min.js"></script>
+	<script src="/moon/js/bootstrap.min.js"></script>
+	<script src="/moon/js/common.js"></script>
+	<title>moon</title>
+</head>
+<body style="background-color: #228b22;">
+<div class="box">
+	<div class="header clear-fix">
+	<a class="logo" href="/moon/"><img src="/moon/img/leaf.png" class="log-img">moon's blog</a>
+	<ul class="menu">
+		<li ><a href="/moon/">首页</a></li>
+		<li ><a href="/moon/style">CSS</a></li>
+		<li class="active"><a href="/moon/javascript">javascript</a></li>
+		<li ><a href="/moon/master">主人</a></li>
+	</ul>
+</div>
+	<div class="line"></div>
+	<div class="body">
+	<div class="detail-title">JavaScript中的小知识</div>
+	<div class="detail-time">2015-02-04 00:00:00 +0800</div>
+	<div class="detail-content">	
+		<pre>
+摘抄于<a href="http://javascript.ruanyifeng.com/grammar/basic.html" target="_blank" class="color3">http://javascript.ruanyifeng.com/grammar/basic.html</a>
+		</pre>
+  <pre>
+    <h4>1.switch语句后面的表达式与case语句后面的表示式</h4>
+switch语句后面的表达式与case语句后面的表示式，在比较运行结果时，采用的是严格相等运算符（===），而不是相等运算符（==），这意味着比较时不会发生类型转换。
+<span class="color5">function</span> test(s){
+  <span class="color5">switch</span>(s){
+    <span class="color5">case</span> 1: <span class="color5">console</span>.log(1);<span class="color5">break</span>;
+    <span class="color5">case</span> 2: <span class="color5">console</span>.log(2);<span class="color5">break</span>;
+    <span class="color5">default</span>: <span class="color5">console</span>.log(3);
+  }
+}
+
+test(1); <span class="color4">//1</span>
+test(<span class="color3">"1"</span>); <span class="color4">// 3</span>
+
+switch结构不利于代码重用，往往可以用对象形式重写
+<span class="color5">var</span> o = {
+    <span class="color2">banana</span>: <span class="color5">function</span> (){ <span class="color5">return</span> },
+    <span class="color2">apple</span>: <span class="color5">function</span> (){ <span class="color5">return</span> },
+    <span class="color2">default</span>: <span class="color5">function</span> (){ <span class="color5">return</span> }
+};
+
+<span class="color5">if</span> (o[<span class="color3">'fruit'</span>]){
+    o[<span class="color3">'fruit'</span>]();
+} <span class="color5">else</span> {
+    o[<span class="color3">'default'</span>]();
+}
+  </pre>
+	<div class="item-status" style="text-align:right;margin-top: 20px;">
+      <a href="#">
+        <i class="icon-eye-open"></i> 阅读(0)
+      </a>
+      <a href="#">
+        <i class="icon-pencil"></i> 评论(0) 
+      </a>
+      <a href="#">
+        <i class="icon-thumbs-up"></i> 转载(0) 
+      </a>
+      <a href="#">
+        <i class="icon-heart"></i> 收藏()
+      </a>
+    </div>
+</div>
+	<div class="footer">
+	Copyright © 2015 - ? zhou-peng, All Rights Reserved
+</div>
+</div>
+</body>
+</html>
